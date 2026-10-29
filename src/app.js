@@ -8,7 +8,7 @@ const PRODUCT = {
   price: 65, // placeholder — confirm with EMK
   stockLeft: 37,
   stockTotal: 100,
-  image: "images/flat-back.jpg",
+  image: "images/back.webp",
   sizes: {
     S:  { chest: "24", length: "27",    shoulder: "23", sleeve: "8.5" },
     M:  { chest: "25", length: "28.25", shoulder: "23", sleeve: "8.5" },

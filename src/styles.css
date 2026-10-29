@@ -352,3 +352,35 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .drag-hint { top: 16px; }
   .gallery .stage-wrap { flex-basis: 92%; }
 }
+
+/* ---------- hero with the 3D photo ---------- */
+.hero {
+  display: grid; grid-template-columns: 1fr 1.05fr; align-items: center;
+  height: auto; min-height: calc(100svh - 96px); background: var(--black);
+}
+.hero::after { content: none; }
+.hero-media { position: relative; height: calc(100svh - 96px); min-height: 560px; order: 2; }
+.hero-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, var(--black) 0%, rgba(10,10,10,0) 22%),
+              linear-gradient(0deg, rgba(10,10,10,.7) 0%, rgba(10,10,10,0) 18%);
+}
+.hero .hero-copy {
+  position: relative; inset: auto; order: 1; text-align: left;
+  padding: 40px var(--gutter); pointer-events: auto;
+}
+.hero .hero-copy p { margin: 0 0 34px; }
+.hero h1 { font-size: clamp(54px, 7.4vw, 124px); }
+.hero .drag-hint { z-index: 3; }
+
+/* close-up crops from the two photos */
+.crop-print img { object-position: 50% 42%; transform: scale(1.9); transform-origin: 50% 42%; }
+.crop-label img { object-position: 72% 40%; transform: scale(2.6); transform-origin: 72% 40%; }
+
+@media (max-width: 860px) {
+  .hero { display: block; min-height: 0; }
+  .hero-media { height: 74svh; min-height: 420px; }
+  .hero-media::after { background: linear-gradient(0deg, var(--black) 0%, rgba(10,10,10,0) 38%); }
+  .hero .hero-copy { text-align: center; margin-top: -150px; z-index: 2; padding-bottom: 56px; }
+  .hero .hero-copy p { margin: 0 auto 30px; }
+}
