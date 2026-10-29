@@ -384,3 +384,113 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .hero .hero-copy { text-align: center; margin-top: -150px; z-index: 2; padding-bottom: 56px; }
   .hero .hero-copy p { margin: 0 auto 30px; }
 }
+
+/* =========================================================
+   Home cinematic story (scroll-driven 3D figure)
+   ========================================================= */
+.cine { position: relative; height: 700vh; background: #000; }
+.cine-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.cine-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* editorial grid */
+.cine-grid {
+  position: absolute; inset: 0 40px; display: flex; justify-content: space-between;
+  pointer-events: none; z-index: 2;
+}
+.grid-line { position: relative; width: 1px; height: 100%; background: rgba(212,195,163,.1); }
+.grid-dot {
+  position: absolute; left: 50%; width: 5px; height: 5px; border-radius: 50%;
+  transform: translate(-50%, -50%); background: rgba(212,195,163,.45); box-shadow: 0 0 6px rgba(212,195,163,.25);
+}
+.story-dashes { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; gap: 12px; }
+.story-dash { width: 2px; height: 40px; background: rgba(212,195,163,.18); border-radius: 2px; overflow: hidden; }
+.story-dash-fill { width: 100%; height: 0; background: var(--gold); }
+
+/* slides */
+.cine-slide { position: absolute; bottom: 11%; z-index: 4; pointer-events: none; }
+.cine-slide.active { pointer-events: auto; }
+.cine-slide .eyebrow { margin: 0 0 18px 60px; opacity: 0; transition: opacity .8s ease .2s; }
+.cine-slide.active .eyebrow { opacity: 1; }
+.cine-title {
+  font-family: var(--serif); font-weight: 400; color: #f4ecdd;
+  font-size: clamp(56px, 7.6vw, 116px); line-height: .98; letter-spacing: .01em; margin-bottom: 22px;
+  text-shadow: 0 2px 28px rgba(0,0,0,.65);
+}
+.cine-title .char {
+  display: inline-block; opacity: 0; transform: translateY(50px); filter: blur(12px);
+  transition: opacity .8s cubic-bezier(.25,1,.5,1), transform .8s cubic-bezier(.25,1,.5,1), filter .8s cubic-bezier(.25,1,.5,1);
+}
+.cine-slide.active .cine-title .char { opacity: 1; transform: none; filter: blur(0); }
+.cine-desc {
+  font-size: 16px; line-height: 1.7; font-weight: 400; color: #cfc8bc; letter-spacing: .02em;
+  text-shadow: 0 1px 14px rgba(0,0,0,.8);
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .8s cubic-bezier(.25,1,.5,1) .4s, transform .8s cubic-bezier(.25,1,.5,1) .4s;
+}
+.cine-slide.active .cine-desc, .cine-slide.active .cine-ctas { opacity: 1; transform: none; }
+.cine-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease .6s, transform .8s ease .6s; }
+
+#cs-1 { left: 0; width: 100%; }
+#cs-1 .cine-title { margin-left: 60px; }
+#cs-1 .desc-row { position: relative; display: flex; }
+#cs-1 .col-1 { margin-left: 60px; width: calc(25vw - 60px); }
+#cs-1 .col-2 { position: absolute; left: calc(25vw + 40px); width: calc(25vw - 60px); }
+#cs-2 { left: 0; width: 100%; }
+#cs-2 .cine-title { margin-left: calc(25vw + 40px); }
+#cs-2 .cine-desc { margin-left: calc(50vw + 20px); width: calc(25vw - 60px); }
+#cs-3 { left: calc(50vw + 20px); width: calc(25vw - 60px); }
+#cs-3 .cine-title { white-space: nowrap; }
+#cs-4 { left: calc(25vw + 40px); max-width: 600px; }
+
+/* print close-up that wipes open on slide 2 */
+.cine-image {
+  position: absolute; z-index: 3; top: 96px; left: 60px; width: calc(25vw - 60px); aspect-ratio: 1;
+  overflow: hidden; pointer-events: none; opacity: 0; clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.8s cubic-bezier(.16,1,.3,1), opacity .8s ease;
+}
+.cine-image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; transform-origin: 50% 42%; transform: scale(2.2); transition: transform 1.8s cubic-bezier(.16,1,.3,1); }
+.cine-image.active { opacity: 1; clip-path: inset(0); }
+.cine-image.active img { transform: scale(1.85); }
+
+.scroll-cue {
+  position: absolute; z-index: 4; left: 50%; bottom: 26px; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: .35em; text-transform: uppercase; color: var(--gold-dim); transition: opacity .6s;
+}
+.scroll-cue span { width: 1px; height: 34px; background: rgba(212,195,163,.25); position: relative; overflow: hidden; }
+.scroll-cue span::after { content: ""; position: absolute; inset: 0; background: var(--gold); animation: cue 1.8s ease-in-out infinite; }
+@keyframes cue { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+.scroll-cue.gone { opacity: 0; }
+
+/* custom double-ring cursor (mouse only) */
+.cursor-inner, .cursor-outer { display: none; }
+body.has-cursor, body.has-cursor * { cursor: none !important; }
+body.has-cursor .cursor-inner, body.has-cursor .cursor-outer {
+  display: block; position: fixed; top: 0; left: 0; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none;
+}
+.cursor-inner { width: 6px; height: 6px; border: 2px solid var(--gold); z-index: 1001; }
+.cursor-outer {
+  width: 40px; height: 40px; border: 1.5px solid rgba(212,195,163,.6); z-index: 1000;
+  transition: width .3s, height .3s, background .3s;
+}
+.cursor-outer.hover { width: 64px; height: 64px; background: rgba(212,195,163,.1); }
+
+/* hide the scrollbar on the home story, like the reference */
+html:has(body.home) { scrollbar-width: none; }
+html:has(body.home)::-webkit-scrollbar { display: none; }
+
+@media (max-width: 760px) {
+  .cine { height: 600vh; }
+  .cine-grid { inset: 0 16px; }
+  .cine-grid .grid-line:nth-child(2), .cine-grid .grid-line:nth-child(4) { display: none; }
+  .story-dash { height: 26px; }
+  .cine-slide, #cs-1, #cs-2, #cs-3, #cs-4 { left: 16px; right: 16px; width: auto; max-width: none; bottom: 7%; }
+  .cine-slide .eyebrow, #cs-1 .cine-title, #cs-2 .cine-title { margin-left: 0; }
+  .cine-title { font-size: clamp(44px, 13vw, 64px); margin-bottom: 14px; }
+  #cs-1 .desc-row { display: block; }
+  #cs-1 .col-1, #cs-1 .col-2, #cs-2 .cine-desc { position: static; margin: 0; width: auto; }
+  #cs-1 .col-2 { display: none; }
+  .cine-desc { font-size: 15px; }
+  #cs-3 .cine-title { white-space: normal; }
+  .cine-image { display: none; }
+}

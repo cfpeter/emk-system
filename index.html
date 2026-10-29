@@ -10,7 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Noto+Serif+Armenian:wght@400;700&display=swap" rel="stylesheet">
 <meta name="robots" content="noindex">
 </head>
-<body>
+<body class="home">
+<div class="cursor-inner" aria-hidden="true"></div>
+<div class="cursor-outer" aria-hidden="true"></div>
 
 <div class="announce">Peace Collection 001 · Limited first drop · Now available</div>
 
@@ -28,16 +30,57 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-media">
-    <div class="stage" data-depth="back" data-focus="0.5,0.42" role="img" aria-label="The Peace Tee, back print, worn on a Los Angeles rooftop"></div>
-    <div class="drag-hint" aria-hidden="true"><span></span>Move to explore</div>
-  </div>
-  <div class="hero-copy">
-    <div class="eyebrow">The wait is over</div>
-    <h1>Peace <em>Collection</em> 001</h1>
-    <p>Premium tees in a relaxed oversized fit. Made with intention, in Los Angeles.</p>
-    <a href="product.html" class="btn">Shop the drop</a>
+<section class="cine" aria-label="Peace Collection 001">
+  <div class="cine-stage">
+    <canvas class="cine-canvas" aria-hidden="true"></canvas>
+
+    <div class="cine-grid" aria-hidden="true">
+      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
+      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
+      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
+      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
+      <div class="grid-line story-line">
+        <div class="grid-dot"></div><div class="grid-dot"></div>
+        <div class="story-dashes">
+          <div class="story-dash"><div class="story-dash-fill"></div></div>
+          <div class="story-dash"><div class="story-dash-fill"></div></div>
+          <div class="story-dash"><div class="story-dash-fill"></div></div>
+          <div class="story-dash"><div class="story-dash-fill"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cine-image" aria-hidden="true"><img src="images/back.webp" alt=""></div>
+
+    <div class="cine-slide" id="cs-1">
+      <div class="eyebrow">EMK SYSTEM™ · Los Angeles</div>
+      <h2 class="cine-title">Peace <br>Collection 001</h2>
+      <div class="desc-row">
+        <p class="cine-desc col-1">The long-awaited first drop. Countless hours, rigorous quality checks, and sample after sample rejected until everything was just right.</p>
+        <p class="cine-desc col-2">Premium quality, real comfort and the perfect oversized relaxed fit. Designed to become your new favorite T-shirt.</p>
+      </div>
+    </div>
+
+    <div class="cine-slide" id="cs-2">
+      <h2 class="cine-title">Peace is <br>Power</h2>
+      <p class="cine-desc">PEACE. سلام. Խաղաղություն. One word in three languages, printed large across the back. Move with intention.</p>
+    </div>
+
+    <div class="cine-slide" id="cs-3">
+      <h2 class="cine-title">Made with <br>Intention</h2>
+      <p class="cine-desc">A woven chest label, dropped shoulders and a relaxed body. Every detail matters. Every choice was intentional.</p>
+    </div>
+
+    <div class="cine-slide" id="cs-4">
+      <h2 class="cine-title">The Wait <br>is Over</h2>
+      <p class="cine-desc">Limited first drop. Black, sizes S to XL. Exchanges within 14 days.</p>
+      <div class="cine-ctas">
+        <a class="btn" href="product.html">Shop the drop</a>
+        <a class="btn ghost" href="info.html#size-guide">Size guide</a>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
   </div>
 </section>
 

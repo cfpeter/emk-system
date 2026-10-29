@@ -68,7 +68,7 @@ function loadImage(src) {
 
 // Grow the near (bright) areas a little, then soften: the background stretches
 // around the person instead of the person's outline smearing.
-function softenDepth(img) {
+export function softenDepth(img, grow = 5) {
   const w = 384;
   const h = Math.round((img.height / img.width) * w);
   const c = document.createElement("canvas");
@@ -103,7 +103,7 @@ function softenDepth(img) {
       }
     return out;
   };
-  a = pass(a, 5, "max");
+  a = pass(a, grow, "max");
   a = pass(a, 4, "blur");
   a = pass(a, 3, "blur");
   for (let i = 0; i < a.length; i++) {
