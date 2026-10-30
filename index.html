@@ -2,208 +2,161 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EMK SYSTEM — Peace Collection 001</title>
-<meta name="description" content="EMK SYSTEM Collection, Los Angeles. Peace Collection 001 — premium oversized tees, made with intention.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EMK SYSTEM · Peace Collection 001</title>
+<meta name="description" content="EMK SYSTEM, Los Angeles. Peace Collection 001: a black oversized tee printed in English, Arabic and Armenian. Order by DM.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0a">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Noto+Serif+Armenian:wght@400;700&display=swap" rel="stylesheet">
-<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,500&family=Noto+Sans+Arabic:wght@500&family=Noto+Sans+Armenian:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/back-cut-fade.webp" fetchpriority="high">
 </head>
-<body class="home">
-<div class="cursor-inner" aria-hidden="true"></div>
-<div class="cursor-outer" aria-hidden="true"></div>
+<body>
 
-<div class="announce">Peace Collection 001 · Limited first drop · Now available</div>
-
-<header class="header">
-  <nav class="nav">
-    <a href="product.html">Shop</a>
-    <a href="#story">Story</a>
-    <a href="info.html#size-guide">Size guide</a>
+<header class="site-header" data-intro>
+  <a href="index.html" class="wordmark" aria-label="EMK SYSTEM, home">EMK SYSTEM™</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="piece.html" class="link">The piece</a>
+    <a href="#sizes" class="link">Sizes</a>
+    <a href="#order" class="link">Order</a>
   </nav>
-  <button class="menu-btn" aria-label="Open menu">Menu</button>
-  <a href="index.html" class="wordmark"><b>EMK SYSTEM™</b><small>LOS ANGELES</small></a>
-  <div class="header-right">
-    <button class="cart-btn" data-open="cart"><span class="label">Bag</span><span class="cart-count" data-cart-count>0</span></button>
-  </div>
 </header>
 
-<!-- HERO -->
-<section class="cine" aria-label="Peace Collection 001">
-  <div class="cine-stage">
-    <canvas class="cine-canvas" aria-hidden="true"></canvas>
+<main class="site-main">
 
-    <div class="cine-grid" aria-hidden="true">
-      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
-      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
-      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
-      <div class="grid-line"><div class="grid-dot"></div><div class="grid-dot"></div></div>
-      <div class="grid-line story-line">
-        <div class="grid-dot"></div><div class="grid-dot"></div>
-        <div class="story-dashes">
-          <div class="story-dash"><div class="story-dash-fill"></div></div>
-          <div class="story-dash"><div class="story-dash-fill"></div></div>
-          <div class="story-dash"><div class="story-dash-fill"></div></div>
-          <div class="story-dash"><div class="story-dash-fill"></div></div>
+  <!-- Hero: the tee as the one lit exhibit in a dark room -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-stage">
+      <img class="hero-poster" src="images/back-cut-fade.webp" alt="" width="858" height="1168">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <h1 class="hero-title display" id="hero-title" aria-label="Peace is power">
+        <span class="line l1" aria-hidden="true">Peace</span>
+        <span class="line l2" aria-hidden="true">is power</span>
+      </h1>
+      <div class="hero-copy" data-intro>
+        <p>EMK SYSTEM Peace Collection 001 is a black oversized tee with one word printed on the back in English, Arabic and Armenian.</p>
+        <a class="btn" href="https://ig.me/m/emk_system" target="_blank" rel="noopener" data-magnetic>
+          DM to order
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase: one frame, three distances -->
+  <section class="showcase" aria-labelledby="showcase-title">
+    <div class="showcase-stage">
+      <h2 class="head" id="showcase-title" aria-label="One word, three languages">
+        <span class="sc-top" aria-hidden="true">One word,</span>
+        <span class="sc-bottom" aria-hidden="true">three languages</span>
+      </h2>
+      <div class="showcase-frame">
+        <img src="images/back.webp" alt="The back print: PEACE, سلام and Խաղաղություն inside a cream frame" width="858" height="1168" loading="lazy">
+      </div>
+      <div class="showcase-caps lead" aria-live="polite">
+        <p>The full back print, worn on a rooftop in Los Angeles.</p>
+        <p>PEACE in English, and سلام, salam, in Arabic.</p>
+        <p>Խաղաղություն, khaghaghutyun, in Armenian.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="wrap about">
+      <div class="about-photo" data-clip>
+        <img src="images/front.webp" alt="The Peace tee from the front, worn against a concrete wall" width="928" height="1414" loading="lazy" data-parallax>
+      </div>
+      <div class="about-copy">
+        <h2 class="head" data-split>Two minds, one vision.</h2>
+        <div class="about-blocks">
+          <div data-reveal>
+            <h3>Built with vision</h3>
+            <p>EMK SYSTEM is two friends from Los Angeles making clothes that say something.</p>
+          </div>
+          <div data-reveal>
+            <h3>Created with purpose</h3>
+            <p>Peace Collection 001 went through sample after sample until the fit, the fabric and the print were right.</p>
+          </div>
         </div>
+        <a class="link lead" href="piece.html" data-reveal>See the piece up close</a>
       </div>
     </div>
+  </section>
 
-    <div class="cine-image" aria-hidden="true"><img src="images/back.webp" alt=""></div>
+  <!-- Gallery: full-bleed curtain -->
+  <section class="gallery" aria-label="Photographs">
+    <figure class="curtain">
+      <img src="images/back.webp" alt="The Peace tee from behind on an overcast rooftop" width="858" height="1168" loading="lazy" style="object-position:50% 38%">
+      <figcaption class="lead">Peace Collection 001, from behind.</figcaption>
+    </figure>
+    <figure class="curtain">
+      <img src="images/front.webp" alt="The Peace tee from the front with the woven chest label" width="928" height="1414" loading="lazy" style="object-position:50% 34%">
+      <figcaption class="lead">The woven label sits on the left chest.</figcaption>
+    </figure>
+  </section>
 
-    <div class="cine-slide" id="cs-1">
-      <div class="eyebrow">EMK SYSTEM™ · Los Angeles</div>
-      <h2 class="cine-title">Peace <br>Collection 001</h2>
-      <div class="desc-row">
-        <p class="cine-desc col-1">The long-awaited first drop. Countless hours, rigorous quality checks, and sample after sample rejected until everything was just right.</p>
-        <p class="cine-desc col-2">Premium quality, real comfort and the perfect oversized relaxed fit. Designed to become your new favorite T-shirt.</p>
+  <!-- Sizes: the live thing -->
+  <section class="section" id="sizes">
+    <div class="wrap">
+      <div class="sizes-head">
+        <h2 class="head" data-split>Find your size</h2>
+        <form class="finder" data-finder data-reveal onsubmit="return false">
+          <label for="chest">Lay a tee you like flat and measure armpit to armpit, in inches.</label>
+          <input id="chest" name="chest" type="number" inputmode="decimal" min="18" max="34" step="0.25" placeholder="For example 24.5">
+          <output for="chest" aria-live="polite"></output>
+        </form>
       </div>
+      <table class="size-table" data-sizes data-ui>
+        <caption class="muted" style="caption-side:bottom;text-align:left;padding-top:20px">Measured flat, in inches. Cut oversized and relaxed: take your usual size for the intended fit.</caption>
+        <thead><tr><th scope="col">Size</th><th scope="col">Chest</th><th scope="col">Length</th><th scope="col">Shoulder</th><th scope="col">Sleeve</th></tr></thead>
+        <tbody>
+          <tr data-size="S" data-chest="24"><td>S</td><td>24</td><td>27</td><td>23</td><td>8.5</td></tr>
+          <tr data-size="M" data-chest="25"><td>M</td><td>25</td><td>28.25</td><td>23</td><td>8.5</td></tr>
+          <tr data-size="L" data-chest="25"><td>L</td><td>25</td><td>29</td><td>24</td><td>8.5</td></tr>
+          <tr data-size="XL" data-chest="26"><td>XL</td><td>26</td><td>29</td><td>24</td><td>9</td></tr>
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <div class="cine-slide" id="cs-2">
-      <h2 class="cine-title">Peace is <br>Power</h2>
-      <p class="cine-desc">PEACE. سلام. Խաղաղություն. One word in three languages, printed large across the back. Move with intention.</p>
-    </div>
-
-    <div class="cine-slide" id="cs-3">
-      <h2 class="cine-title">Made with <br>Intention</h2>
-      <p class="cine-desc">A woven chest label, dropped shoulders and a relaxed body. Every detail matters. Every choice was intentional.</p>
-    </div>
-
-    <div class="cine-slide" id="cs-4">
-      <h2 class="cine-title">The Wait <br>is Over</h2>
-      <p class="cine-desc">Limited first drop. Black, sizes S to XL. Exchanges within 14 days.</p>
-      <div class="cine-ctas">
-        <a class="btn" href="product.html">Shop the drop</a>
-        <a class="btn ghost" href="info.html#size-guide">Size guide</a>
+  <!-- Order: card on a photograph -->
+  <section class="order" id="order" aria-labelledby="order-title">
+    <div class="order-photo"><img src="images/back.webp" alt="" width="858" height="1168" loading="lazy" style="object-position:50% 30%" data-parallax></div>
+    <div class="order-card" data-reveal>
+      <h2 class="head" id="order-title">Order by DM</h2>
+      <ul class="order-steps">
+        <li>Send @emk_system a DM with your size<span data-size-echo></span>.</li>
+        <li>We confirm stock, price and shipping.</li>
+        <li>Payment details come in the chat, and tracking follows when it ships.</li>
+      </ul>
+      <div class="order-actions">
+        <a class="btn" href="https://ig.me/m/emk_system" target="_blank" rel="noopener" data-magnetic>
+          DM @emk_system
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="link" href="mailto:emksystem01@gmail.com?subject=Order%3A%20Peace%20tee" data-mail>Email instead</a>
       </div>
+      <p class="order-fine">All sales are final. Size exchanges within 14 days of delivery, unworn and with tags on. Shipping is paid by the customer.</p>
     </div>
+  </section>
 
-    <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
-  </div>
-</section>
+</main>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>MOVE WITH INTENTION</span><span class="dot">◆</span><span>PEACE IS POWER</span><span class="dot">◆</span>
-    <span>PEACE · UNITY · CULTURE</span><span class="dot">◆</span><span>TWO MINDS, ONE VISION</span><span class="dot">◆</span>
-    <span>MOVE WITH INTENTION</span><span class="dot">◆</span><span>PEACE IS POWER</span><span class="dot">◆</span>
-    <span>PEACE · UNITY · CULTURE</span><span class="dot">◆</span><span>TWO MINDS, ONE VISION</span><span class="dot">◆</span>
+<footer class="site-footer">
+  <div class="footer-cols">
+    <div><h3>Instagram</h3><a class="link" href="https://www.instagram.com/emk_system/" target="_blank" rel="noopener">@emk_system</a></div>
+    <div><h3>Email</h3><a class="link" href="mailto:emksystem01@gmail.com">emksystem01@gmail.com</a></div>
+    <div><h3>Studio</h3><p>Los Angeles, California</p></div>
+    <div><h3>Motto</h3><p>Move with intention. Peace is power.</p></div>
   </div>
-</div>
-
-<!-- THE DROP -->
-<section class="section">
-  <div class="drop">
-    <a href="product.html" class="slot reveal" data-label="Tee back · brick wall">
-      <img src="images/back.webp" style="object-position:50% 40%" alt="Peace Tee, back print, worn against a brick wall">
-    </a>
-    <div class="drop-copy reveal">
-      <div class="eyebrow">Drop 001 · Series-001</div>
-      <h2>The Peace Tee</h2>
-      <p>Sample after sample was rejected until every detail was right: the weight, the drape, the print.</p>
-      <p>The result is premium quality, real comfort and the oversized relaxed fit, built to be your new favorite T-shirt.</p>
-      <div class="drop-meta">
-        <div><small>Price</small><b data-home-price>$65</b></div>
-        <div><small>Sizes</small><b>S — XL</b></div>
-        <div><small>Fit</small><b>Oversized</b></div>
-      </div>
-      <a href="product.html" class="btn">Choose your size</a>
-    </div>
+  <div class="footer-mark" aria-hidden="true">
+    <svg viewBox="0 0 1000 150"><text x="0" y="128" font-size="150" textLength="1000" lengthAdjust="spacingAndGlyphs">EMK SYSTEM</text></svg>
   </div>
-</section>
-
-<!-- PEACE IN THREE LANGUAGES -->
-<section class="section peace">
-  <div class="section-head reveal">
-    <div class="eyebrow">One word, three languages</div>
-    <h2>Peace, written the way we speak it</h2>
-  </div>
-  <div class="peace-grid reveal">
-    <div><div class="peace-word">PEACE</div><small>English</small></div>
-    <div><div class="peace-word ar">سلام</div><small>Arabic · Salam</small></div>
-    <div><div class="peace-word hy">Խաղաղություն</div><small>Armenian · Khaghaghutyun</small></div>
-  </div>
-  <p class="peace-line reveal">Move with intention. Peace is power.</p>
-</section>
-
-<!-- LOOKBOOK -->
-<section class="section">
-  <div class="section-head reveal">
-    <div class="eyebrow">Lookbook</div>
-    <h2>Worn in the city</h2>
-  </div>
-  <div class="look">
-    <div class="slot a reveal" data-label="Rooftop · skyline"><img src="images/front.webp" alt="Peace Tee on a Los Angeles rooftop"></div>
-    <div class="slot b reveal" data-label="Rooftop · back print"><img src="images/back.webp" alt="Peace Tee back print with the city behind"></div>
-    <div class="slot c reveal crop-label" data-label="Hang tag · label"><img src="images/front.webp" alt="EMK Streetwear hang tag and label"></div>
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section class="section" style="padding-top:0">
-  <div class="details reveal">
-    <div><b>Premium quality</b><p>Checked sample by sample until the fabric and finish were right.</p></div>
-    <div><b>Oversized fit</b><p>Dropped shoulders and a relaxed body. Check the size guide.</p></div>
-    <div><b>Premium print</b><p>The three-language Peace mark, front tag and full back.</p></div>
-    <div><b>Signature box</b><p>Every order ships in the black EMK box with tissue and seal.</p></div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section class="section" id="story" style="background:var(--ink);border-top:1px solid var(--line)">
-  <div class="story">
-    <div class="slot reveal crop-print" data-label="Back print"><img src="images/back.webp" alt="The Peace print up close"></div>
-    <div class="reveal">
-      <div class="eyebrow">Est. 2021 · Los Angeles</div>
-      <h2>Two minds,<br>one vision.</h2>
-      <p>EMK SYSTEM started with two friends and one idea: clothing that carries a message, made without shortcuts.</p>
-      <p>Every detail matters. Every choice is intentional. Peace Collection 001 is the first chapter.</p>
-      <p style="font-family:var(--serif);font-style:italic;color:var(--gold);font-size:20px;margin-top:22px">Built with vision. Created with purpose.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SIGNUP -->
-<section class="section signup">
-  <div class="eyebrow">Drop 002 is coming</div>
-  <h2>Be first in line</h2>
-  <p>Drops are limited. Join the list and get early access before anything goes public.</p>
-  <form data-signup>
-    <input type="email" required placeholder="Email address" aria-label="Email address">
-    <button class="btn" type="submit">Join</button>
-  </form>
-  <p class="thanks" aria-live="polite"></p>
-</section>
-
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <div class="wordmark"><b>EMK SYSTEM™</b><small>COLLECTION · LOS ANGELES</small></div>
-      <p class="tag">Two minds, one vision. Built with vision, created with purpose.</p>
-    </div>
-    <div><h4>Shop</h4><ul><li><a href="product.html">Peace Tee</a></li><li><a href="product.html">Peace Collection 001</a></li></ul></div>
-    <div><h4>Help</h4><ul><li><a href="info.html#how-to-order">How to order</a></li><li><a href="info.html#size-guide">Size guide</a></li><li><a href="info.html#shipping">Shipping</a></li><li><a href="info.html#returns">Returns &amp; exchanges</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="https://www.instagram.com/emk_system/" target="_blank" rel="noopener">Instagram</a></li><li><a href="mailto:emksystem01@gmail.com">emksystem01@gmail.com</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 EMK SYSTEM™</span><span>Los Angeles, CA</span></div>
+  <div class="footer-base"><span>© 2026 EMK SYSTEM™</span><a class="link" href="piece.html">The piece</a></div>
 </footer>
-
-<!-- drawers -->
-<div class="scrim"></div>
-<aside class="drawer" id="cart" aria-label="Shopping bag">
-  <div class="drawer-head"><span>Your bag</span><button data-close aria-label="Close">×</button></div>
-  <div class="drawer-body"></div>
-  <div class="drawer-foot"></div>
-</aside>
-<aside class="drawer mobile-menu-wrap" id="menu" aria-label="Menu">
-  <div class="drawer-head"><span>Menu</span><button data-close aria-label="Close">×</button></div>
-  <div class="drawer-body mobile-menu">
-    <a href="product.html">Shop</a><a href="#story" data-close>Story</a><a href="info.html#size-guide">Size guide</a><a href="info.html#shipping">Shipping</a><a href="info.html#contact">Contact</a>
-  </div>
-</aside>
-<div class="toast" role="status"></div>
 
 <script type="module" src="./src/main.js"></script>
 </body>

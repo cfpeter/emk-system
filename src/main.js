@@ -1,8 +1,17 @@
 import "./styles.css";
-import "./app.js";
+import "./sizes.js";
+import { startMotion } from "./motion.js";
 
-// Load Three.js only on pages that use it.
-if (document.querySelector(".cine")) import("./cinematic.js");
-if (document.querySelector("[data-depth]")) {
-  import("./depthphoto.js").then((m) => m.mountAll());
+// The 3D hero loads Three.js only on the home page; the rest of the site never waits for it.
+const stage = document.querySelector(".hero-stage");
+if (stage) {
+  let api = null;
+  const proxy = { setProgress: (p) => api?.setProgress(p) };
+  startMotion(proxy);
+  import("./hero3d.js")
+    .then((m) => m.initHero(stage, stage.querySelector(".hero-canvas")))
+    .then((a) => { api = a; })
+    .catch(() => {});
+} else {
+  startMotion(null);
 }

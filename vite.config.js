@@ -8,8 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, "index.html"),
-        product: resolve(import.meta.dirname, "product.html"),
-        info: resolve(import.meta.dirname, "info.html"),
+        piece: resolve(import.meta.dirname, "piece.html"),
       },
     },
   },
